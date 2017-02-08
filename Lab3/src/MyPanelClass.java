@@ -20,17 +20,38 @@ public class MyPanelClass extends JPanel {
                         int y2 = getHeight() - myInsets.bottom - 1;
                         int width = x2 - x1;
                         int height = y2 - y1;
+                        int HorWidth,
+                        VerWidth,
+                        WidthSides,
+                        HeightSides;
  
                         //Paint the background
                         g.setColor(Color.LIGHT_GRAY);
                         g.fillRect(x1, y1, width+1, height+1);
+//                        
+//                        //Draw a border
+//                        g.setColor(Color.CYAN);
+//                        g.drawRect(x1, y1, width, height);
+//                        
+//                        //Draw a border 2
+//                        g.setColor(Color.MAGENTA);
+//                        g.drawRect(x1+6, y1+6, width-12, height-12);
+//                        
+//                        //Draw diagonal Line1
+//                        g.setColor(Color.WHITE);
+//                        g.drawLine(x1, y1, x2, y2);
+//                        
+//                        //Draw diagonal Line2
+//                        g.setColor(Color.BLACK);
+//                        g.drawLine(x2, y1, x1, y2);
                         
-                        //Draw a border
-                        g.setColor(Color.CYAN);
-                        g.drawRect(x1, y1, width, height);
+                        HorWidth = width - 55;
+                        VerWidth = height - 55;
+                        WidthSides = HorWidth/2;
+                        HeightSides = VerWidth/2;
                         
-                        //Draw a border 2
-                        g.setColor(Color.MAGENTA);
-                        g.drawRect(x1+6, y1+6, width-12, height-12);
-            }
+                        //Draw Oval
+                        g.setColor(Color.ORANGE);
+                        g.fillOval(WidthSides, HeightSides, 55, 55);
+                        }
 }
