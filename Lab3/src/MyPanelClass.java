@@ -31,6 +31,6 @@ public class MyPanelClass extends JPanel {
                         
                         //Draw a border 2
                         g.setColor(Color.MAGENTA);
-                        g.drawRect(x1+5, y1+5, width-10, height-10);
+                        g.drawRect(x1+6, y1+6, width-12, height-12);
             }
 }
