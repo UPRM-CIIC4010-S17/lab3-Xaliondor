@@ -22,13 +22,20 @@ public class MyPanelClass extends JPanel {
                         int y2 = getHeight() - myInsets.bottom - 1;
                         int width = x2 - x1;
                         int height = y2 - y1;
-                        int HorWidth,
-                        VerWidth,
-                        WidthSides,
-                        HeightSides;
+//                        int HorWidth,
+//                        VerWidth,
+//                        WidthSides,
+//                        HeightSides;
+                        int xtri,
+                        ytri;
+                        
+                        int ystr1,
+                        ystr2,
+                        strwidth;
  
                         //Paint the background
-                        g.setColor(Color.LIGHT_GRAY);
+                        //Also the base for the flag
+                        g.setColor(Color.RED);
                         g.fillRect(x1, y1, width+1, height+1);
 //                        
 //                        //Draw a border
@@ -67,6 +74,30 @@ public class MyPanelClass extends JPanel {
 //                        g.setColor(Color.YELLOW);
 //                        g.fillPolygon(p);
                         
+                        //Makes the White Stripes
+                        
+                        ystr1 = y1 + (height/5);
+                        ystr2 = y1 + (3*(height/5));
+                        strwidth = height/5;
+                        
+                        g.setColor(Color.WHITE);
+                        g.fillRect(x1,ystr1,width,strwidth);
+                        
+                        g.setColor(Color.WHITE);
+                        g.fillRect(x1, ystr2, width, strwidth);
+                        
+                        //Makes the Triangle
+                        xtri = 8 * (width/14);
+                        ytri = height/2;
+                        
+                        Polygon tri = new Polygon();
+                        tri.addPoint(x1, y1);
+                        tri.addPoint(x1, height);
+                        tri.addPoint(xtri, ytri);
+                        g.setColor(Color.BLUE);
+                        g.fillPolygon(tri);
+                        
+                        //Makes the Star
                         Polygon p2 = new Polygon();
                         p2.addPoint(x1 + 25, y1 + 73);
                         p2.addPoint(x1 + 41, y1 + 73);
@@ -79,6 +110,8 @@ public class MyPanelClass extends JPanel {
                         p2.addPoint(x1 + 34, y1 + 98);
                         p2.addPoint(x1 + 38, y1 + 83);
                         g.setColor(Color.WHITE);
-                        g.drawPolygon(p2);
+                        g.fillPolygon(p2);
+                        
+
                         }
 }
